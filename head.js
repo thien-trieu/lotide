@@ -17,12 +17,9 @@ const assertEqual = function(actual, expected) {
 
 const head = function(array) {
   
-  for (let i = 0; i < array.length; i++) {
-    if (array.length > 0) {
-      return array[0];
-    }
-  }
-  if (array.length < 0) {
+  if (array.length > 0) {
+    return array[0];
+  } else {
     return undefined;
   }
 };
