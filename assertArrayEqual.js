@@ -10,7 +10,7 @@ const eqArrays = function (arr1, arr2) {
 }
 
 // Logging if Assertion of Arrays
-function assertEqualArray(arr1, arr2) {
+function assertArraysEqual(arr1, arr2) {
   // Storing return of eqArray in result
   let result = eqArrays(arr1, arr2);
   if (result === true){
@@ -22,8 +22,8 @@ function assertEqualArray(arr1, arr2) {
   }
 }
 
-assertEqualArray([1, 2, 3], [1, 2, 3]); // => true
-assertEqualArray([1, 2, 3], [3, 2, 1]); // => false
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
 
-assertEqualArray(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertEqualArray(["1", "2", "3"], ["1", "2", 3]); // => false
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
