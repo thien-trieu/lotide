@@ -6,15 +6,6 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// assertEqual("Lighthouse Labs", "Lighthouse Labs");
-// assertEqual(5, 7);
-
-
-// Create a function head which
-// returns the first item in the array.
-// The head function should not return the first element as an array.
-// It should simply return the element itself.
-
 const head = function(array) {
   
   if (array.length > 0) {

@@ -4,6 +4,7 @@ const eqArrays = function(arr1, arr2) {
   if (len !== arr2.length) {
     return false;
   }
+  
   for (let i = 0; i < len; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
@@ -11,6 +12,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
+
 // Logging Assertion of Arrays
 const assertArraysEqual = function(arr1, arr2) {
   // Storing return of eqArray in result
@@ -24,7 +26,20 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+// Map excercise
+const words = ["ground", "control", "to", "major", "tom"];
+
+// Map Function
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+};
+
+const results1 = map(words, word => word[0]);
+console.log(results1);
+
+// Testing assertion for results1
+assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);

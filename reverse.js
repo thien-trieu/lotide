@@ -1,7 +1,7 @@
 const args = process.argv.slice(2);
 console.log(args);
 
-let reverse = function(input) {
+const reverse = function(input) {
   let newString = "";
   for (let i = 0; i < input.length; i++) {
     for (let x = input[i].length - 1; x >= 0; x--) {

@@ -10,9 +10,9 @@ const countOnly = function(allItems, itemsToCount) {
   let result = {};
   // go through the bag of items
   for (const item of allItems) {
-    if (!itemsToCount[item]){
+    if (!itemsToCount[item]) {
     // skip this loop
-      continue
+      continue;
     }
 
     if (result[item] === undefined) {
