@@ -1,6 +1,5 @@
-// function to check if values of two aray are equal
-const eqArrays = function(arr1, arr2) {
-  let len = arr1.length;
+const eqArrays = (arr1, arr2) => {
+  const len = arr1.length;
   if (len !== arr2.length) {
     return false;
   }
@@ -13,10 +12,8 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-// Logging Assertion of Arrays
-const assertArraysEqual = function(arr1, arr2) {
-  // Storing return of eqArray in result
-  let result = eqArrays(arr1, arr2);
+const assertArraysEqual = (arr1, arr2) => {
+  const result = eqArrays(arr1, arr2);
   if (result === true) {
     console.log(`🤑 Assertion Passed: ${arr1} === ${arr2}`);
     return;
@@ -26,11 +23,10 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-// Map excercise
+
 const words = ["ground", "control", "to", "major", "tom"];
 
-// Map Function
-const map = function(array, callback) {
+const map = (array, callback) => {
   const results = [];
   for (let item of array) {
     results.push(callback(item));
@@ -41,5 +37,4 @@ const map = function(array, callback) {
 const results1 = map(words, word => word[0]);
 console.log(results1);
 
-// Testing assertion for results1
 assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);

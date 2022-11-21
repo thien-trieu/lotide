@@ -1,7 +1,6 @@
-// function to check if values of two aray are equal
-const eqArrays = function (arr1, arr2) {
-  let len = arr1.length;
-  if (len !== arr2.length){
+const eqArrays = (arr1, arr2) => {
+  const len = arr1.length;
+  if (len !== arr2.length) {
     return false;
   }
   
@@ -11,12 +10,10 @@ const eqArrays = function (arr1, arr2) {
     }
   }
   return true;
-}
+};
 
-// Logging if Assertion of Arrays
-const assertArraysEqual = function (arr1, arr2) {
-  // Storing return of eqArray in result
-  let result = eqArrays(arr1, arr2);
+const assertArraysEqual = (arr1, arr2) => {
+  const result = eqArrays(arr1, arr2);
   if (result === true) {
     console.log(`🤑 Assertion Passed: ${arr1} === ${arr2}`);
     return;
@@ -24,11 +21,9 @@ const assertArraysEqual = function (arr1, arr2) {
   if (result === false) {
     console.log(`😡 Assertion Failed: ${arr1} !== ${arr2}`);
   }
-}
+};
 
-
-// if item(s) match in both array, return a new array with item removed.
-const without = function(source, itemsToRemove) {
+const without = (source, itemsToRemove) => {
   let updatedItems = [];
   for (let i = 0; i < source.length; i++) {
     let matches = [];
@@ -42,12 +37,13 @@ const without = function(source, itemsToRemove) {
       updatedItems.push(source[i]);
     }
   }
-  console.log(updatedItems);
+  return updatedItems;
 };
 
 without([1, 2, 3], [1]); // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertArraysEqual(words, ["hello", "world", "lighthouse"]); // should pass assertion

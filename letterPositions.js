@@ -1,7 +1,6 @@
-// function to check if values of two aray are equal
-const eqArrays = function (arr1, arr2) {
-  let len = arr1.length;
-  if (len !== arr2.length){
+const eqArrays = (arr1, arr2) => {
+  const len = arr1.length;
+  if (len !== arr2.length) {
     return false;
   }
   
@@ -11,12 +10,10 @@ const eqArrays = function (arr1, arr2) {
     }
   }
   return true;
-}
+};
 
-// Logging if Assertion of Arrays
-function assertArraysEqual(arr1, arr2) {
-  // Storing return of eqArray in result
-  let result = eqArrays(arr1, arr2);
+const assertArraysEqual = (arr1, arr2) => {
+  const result = eqArrays(arr1, arr2);
   if (result === true) {
     console.log(`🤑 Assertion Passed: ${arr1} === ${arr2}`);
     return;
@@ -24,26 +21,29 @@ function assertArraysEqual(arr1, arr2) {
   if (result === false) {
     console.log(`😡 Assertion Failed: ${arr1} !== ${arr2}`);
   }
-}
+};
 
 
-const letterPositions = function(sentence) {
+const letterPositions = sentence => {
   const stringArr = sentence.split("");
   const results = {};
 
-  for (const index in stringArr) {
-    if (stringArr[index] === " ") {
-      continue;
+  stringArr.forEach((value, index) => {
+
+    if (value !== " ") {
+
+      if (results[value] === undefined) {
+        results[value] = [];
+      }
+      if (results[value]) {
+        results[value].push(index);
+      }
     }
-
-    if (results[stringArr[index]]) {
-      results[stringArr[index]].push(index);
-
-    } else {
-      results[stringArr[index]] = [index];
-    }
-  }
-
+  });
   return results;
 };
-console.log(letterPositions("lighthouse in the house"))
+
+console.log(letterPositions("lighthouse in the house"));
+console.log(letterPositions("hello"));
+
+assertArraysEqual(letterPositions("hello").e, [1]);

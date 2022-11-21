@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = (actual, expected) => {
   if (actual === expected) {
     console.log(`🤑 Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -6,15 +6,16 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const tail = function(array) {
-  let newArray = [];
+const tail = array => {
+  let results = [];
   for (let i = 0; i < array.length; i++) {
     if (i !== 0) {
-      newArray.push(array[i]);
+      results.push(array[i]);
     }
   }
-  return newArray;
+  return results;
 };
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
+// assertEqual will fail because it can not check the values of the two arrays
 assertEqual(result, ["Lighthouse", "Labs"]);
