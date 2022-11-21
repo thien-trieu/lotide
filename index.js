@@ -7,7 +7,6 @@ const without = require('./without');
 const findKeyByValue = require('./findKeyByValue');
 const letterPositions = require('./letterPositions');
 
-
 module.exports = {
   head:   head,
   tail:   tail,
@@ -15,5 +14,6 @@ module.exports = {
   countOnly: countOnly,
   without: without,
   countLetters: countLetters,
-  findKeyByValue: findKeyByValue
+  findKeyByValue: findKeyByValue,
+  letterPositions: letterPositions
 };
