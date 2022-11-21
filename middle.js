@@ -16,11 +16,8 @@ const middle = (array) => {
   }
   // check if length is even
   if (len % 2 === 0) {
-    if (array[len / 2 - 1] || array[len / 2]) {
       // push the middle 2 indexes
-      result.push(array[len / 2 - 1]);
-      result.push(array[len / 2]);
-    }
+      result.push(array[len / 2 - 1], array[len / 2]);
   }
   return result;
 };
