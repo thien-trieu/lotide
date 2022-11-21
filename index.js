@@ -13,7 +13,7 @@ module.exports = {
   middle: middle,
   countOnly: countOnly,
   without: without,
-  countLetters: countLetters,
+  countLetters: countLetters, //
   findKeyByValue: findKeyByValue,
   letterPositions: letterPositions
 };
